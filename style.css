@@ -1,0 +1,174 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Oswald:wght@500&display=swap");
+
+:root {
+  --main-color: #ff565c;
+  --main-background-color: #f9fafc;
+  --font-color: #1d1f24;
+  --header-bottom-color: #ebebeb;
+}
+/* reset */
+body,
+ul,
+li,
+h1,
+h2,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+input {
+  font: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font: inherit;
+  border: 0;
+  background: none;
+}
+button:enabled,
+img:hover,
+a:hover {
+  cursor: pointer;
+}
+ul,
+li {
+  list-style: none;
+}
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+/* CSS */
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--font-color);
+  /* font-family: 'Oswald', sans-serif; */
+}
+/* header */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--header-bottom-color);
+}
+.header-list {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  gap: 59px;
+}
+.header-list .title {
+  padding: 28px 0 32px 38px;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+}
+.header-list .title::after {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 4px;
+  background-color: var(--main-color);
+  top: 49px;
+  margin-left: 2px;
+}
+.header-list li:not(:first-child) {
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  opacity: 0.2;
+}
+/* 햄버거 버튼 */
+.btn-allmenu {
+  display: flex;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  padding: 36px 50px 36px 0;
+}
+
+.btn-allmenu .line {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 100%;
+  transform: rotate(0);
+  transition: transform 0.3s;
+}
+
+.btn-allmenu .line span {
+  display: inline-block;
+  background: var(--font-color);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  transition: all 0.3s;
+}
+
+.btn-allmenu .line span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.btn-allmenu .line span:nth-child(2) {
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.btn-allmenu .line span:nth-child(3) {
+  bottom: 0%;
+  left: 0;
+}
+
+/* 전체 메뉴 버튼:hover, active */
+.btn-allmenu:hover .line {
+  transform: rotate(90deg);
+}
+
+.btn-allmenu:active .line {
+  transform: rotate(-45deg);
+}
+
+.btn-allmenu:hover .line span:nth-child(1),
+.btn-allmenu:active .line span:nth-child(1) {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(90deg);
+}
+
+.btn-allmenu:hover .line span:nth-child(2),
+.btn-allmenu:active .line span:nth-child(2) {
+  opacity: 0;
+}
+
+.btn-allmenu:hover .line span:nth-child(3),
+.btn-allmenu:active .line span:nth-child(3) {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(-360deg);
+}
+/* main */
+.main {
+  background-color: var(--main-background-color);
+}
